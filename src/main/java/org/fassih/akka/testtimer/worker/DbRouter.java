@@ -34,9 +34,9 @@ public class DbRouter extends AbstractActor {
     @Override
     public void preStart() throws Exception {
         super.preStart();
-
         List<Routee> routes = new ArrayList<>();
-        for( int i = 0; i < 10; i ++ ) {
+        int workerCount = getContext().getSystem().settings().config().getConfig("app").getInt("worker-count");
+        for( int i = 0; i < workerCount; i ++ ) {
             routes.add(new ActorRefRoutee( createNode() ));
         }
         router = new Router(new RoundRobinRoutingLogic(), routes);

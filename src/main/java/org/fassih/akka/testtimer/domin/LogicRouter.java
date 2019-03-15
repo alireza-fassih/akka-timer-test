@@ -37,7 +37,8 @@ public class LogicRouter extends AbstractActor {
     @Override
     public void preStart() throws Exception {
         super.preStart();
-        for( int i = 0; i < 2; i ++ ) {
+        int jobCount = getContext().getSystem().settings().config().getConfig("app").getInt("job-count");
+        for( int i = 0; i < jobCount; i ++ ) {
             createNode();
         }
     }

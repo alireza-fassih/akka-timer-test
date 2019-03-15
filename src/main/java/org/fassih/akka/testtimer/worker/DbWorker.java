@@ -6,9 +6,11 @@ import akka.event.LoggingAdapter;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
+import java.security.SecureRandom;
+
 public class DbWorker extends AbstractActor {
 
-    private static final long COMMAND_DEFAULT_DELAY_MS = 200;
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     @Getter
     @RequiredArgsConstructor
@@ -38,7 +40,7 @@ public class DbWorker extends AbstractActor {
 
     private void handleCommand(Command command) {
         try {
-            Thread.sleep(COMMAND_DEFAULT_DELAY_MS);
+            Thread.sleep(RANDOM.nextInt(200));
             getSender().tell( new CommandResult(command.getId(), "Some result from database !"), getSelf() );
         } catch (InterruptedException e) {
             log.error(e, "interrupted !");
