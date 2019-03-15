@@ -38,7 +38,7 @@ public class LogicActor  extends AbstractActorWithTimers {
 
 
     /**
-     * hold next job should run at
+     * hold the time that next job should run at
      */
     private long nextScheduled;
 
