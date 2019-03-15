@@ -54,7 +54,7 @@ The App Take 75Mb of heap before GC and 1% of cpu
 ![100-job-thread](img/100-JobThreads.png)
 
 
-## Run With 1000 job
+## Run With 1,000 job
 
 ```
 app {
@@ -69,3 +69,20 @@ The App Take 75Mb of heap before GC and 1% of cpu
 ![1000-job-thread](img/1000-JobTop.png)
 ![1000-job-heap](img/1000-JobMemory.png)
 ![1000-job-thread](img/1000-JobThreads.png)
+
+
+## Run With 100,000 job
+
+```
+app {
+  worker-count = 5
+  job-count = 100000
+}
+```
+
+Jobs run with 15ms Delay, **So Cool** !
+
+![100000-job-thread](img/100000-JobTop.png)
+![100000-job-heap](img/100000-JobMemory.png)
+![100000-job-thread](img/100000-JobThreads.png)
+
