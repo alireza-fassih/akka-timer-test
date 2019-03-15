@@ -36,4 +36,36 @@ I don't know why heap usage are **increasing** !
 The program starts new thread called scheduler and its sleeping.
 
 ![2-job-thread](img/2-JobThreads.png)
+![2-job-thread](img/2-Job-ThreadColors.png)
 
+
+## Run With 100 job
+
+```
+app {
+  worker-count = 5
+  job-count = 100
+}
+```
+
+The App Take 75Mb of heap before GC and 1% of cpu
+![100-job-thread](img/100-JobTop.png)
+![100-job-heap](img/100-JobMemory.png)
+![100-job-thread](img/100-JobThreads.png)
+
+
+## Run With 1000 job
+
+```
+app {
+  worker-count = 5
+  job-count = 1000
+}
+```
+Jobs run with 11ms Delay, **Cool** !
+
+The App Take 75Mb of heap before GC and 1% of cpu
+
+![1000-job-thread](img/1000-JobTop.png)
+![1000-job-heap](img/1000-JobMemory.png)
+![1000-job-thread](img/1000-JobThreads.png)
