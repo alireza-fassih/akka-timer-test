@@ -51,7 +51,6 @@ public class LogicActor  extends AbstractActorWithTimers {
 
     private void scheduledRandom() {
         int time = RANDOM.nextInt(5000);
-        log.info("scheduled for {}", time);
         nextScheduled = currentTimeMillis() + ( time * 1000 );
         timers().startSingleTimer(KEY, new Load(), Duration.ofSeconds(time));
     }

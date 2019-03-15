@@ -62,7 +62,6 @@ app {
   job-count = 1000
 }
 ```
-Jobs run with 11ms Delay, **Cool** !
 
 The App Take 75Mb of heap before GC and 1% of cpu
 
@@ -80,9 +79,21 @@ app {
 }
 ```
 
-Jobs run with 15ms Delay, **So Cool** !
-
 ![100000-job-thread](img/100000-JobTop.png)
 ![100000-job-heap](img/100000-JobMemory.png)
 ![100000-job-thread](img/100000-JobThreads.png)
 
+## Run With 1,000,000 job
+```
+app {
+  worker-count = 5
+  job-count = 1000000
+}
+```
+
+
+Jobs run with 15ms Delay, **So Cool** !
+
+![1000000-job-thread](img/1000000-JobTop.png)
+![1000000-job-heap](img/1000000-JobMemory.png)
+![1000000-job-thread](img/1000000-JobThreads.png)
