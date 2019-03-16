@@ -33,7 +33,6 @@ The App Take 75Mb of heap before GC and 1% of cpu
 
 I don't know why heap usage are **increasing** !
 
-The program starts new thread called scheduler and its sleeping.
 
 ![2-job-thread](img/2-JobThreads.png)
 ![2-job-thread](img/2-Job-ThreadColors.png)
